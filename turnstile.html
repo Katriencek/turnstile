@@ -11,7 +11,7 @@
 <h2>Overenie návštevníka</h2>
 <p>Prosím, potvrďte, že nie ste robot.</p>
 
-<form id="overenieForm" method="POST" action="#">
+<form id="overenieForm">
     <div class="cf-turnstile"
          data-sitekey="0x4AAAAAACV6ZG9lR6TtlOf3"
          data-mode="interactive"
@@ -24,8 +24,7 @@
 
 <script>
 function onSuccess(token) {
-    // Overenie prebehlo úspešne – formulár sa ukončí/odošle
-    document.getElementById("overenieForm").submit();
+   window.location.href = "dakujem.html" 
 }
 </script>
 
