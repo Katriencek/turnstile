@@ -5,13 +5,40 @@
     <title>Turnstile Overenie</title>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-<body style="font-family: Arial; padding: 40px; text-align: center;">
-    <h2>Overenie návštevníka</h2>
-    <p>Prosím, potvrďte, že nie ste robot.</p>
 
+<body style="font-family: Arial; padding: 40px; text-align: center;">
+
+<h2>Overenie návštevníka</h2>
+<p>Prosím, potvrďte, že nie ste robot.</p>
+
+<form id="overenieForm" method="POST" action="#">
     <div class="cf-turnstile"
-         data-sitekey="0x4AAAAAACV6ZG9lR6TtlOf3">
+         data-sitekey="0x4AAAAAACV6ZG9lR6TtlOf3"
+         data-mode="interactive"
+         data-callback="onSuccess">
     </div>
+
+    <br>
+    <button type="submit">Pokračovať</button>
+</form>
+
+<script>
+function onSuccess(token) {
+    // Overenie prebehlo úspešne – formulár sa ukončí/odošle
+    document.getElementById("overenieForm").submit();
+}
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
